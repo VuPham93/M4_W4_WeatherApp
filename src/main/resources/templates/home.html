@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1>Welcome</h1>
+<h3>Province</h3>
+<form action="/weather/" th:object="${locations}" th>
+    <select name="location">
+        <option th:each="l : ${locations}" th:text="${l.name}" th:value="${l.id}"></option>
+    </select>
+    <input type="submit" value="Show Weather">
+</form>
+</body>
+</html>
